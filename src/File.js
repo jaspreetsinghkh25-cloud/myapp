@@ -1,22 +1,22 @@
 import { Add, Check, Circle, Delete } from "@mui/icons-material"
 import axios from "axios";
-import { useEffect, useEffectEvent, useState } from "react"
+import { useEffect,  useState } from "react"
 export default function File(){
     const [list, setlist]= useState([]);
     const [name , setname]= useState("")
 
     function Fun1(){
-        axios.get("http://localhost:6002/Todo").then((row)=>{
-            setlist(row.data)
-        })
+        // axios.get("http://localhost:6002/Todo").then((row)=>{
+        //     setlist(row.data)
+        // })
     }
     function Fun2(){
         
         const ob = {name:name, status:false};
-        axios.post("http://localhost:6002/File3", ob).then((succ)=>{
-            console.log("Added")
-            // Fun1()
-        })
+        // axios.post("http://localhost:6002/File3", ob).then((succ)=>{
+        //     console.log("Added")
+        //     // Fun1()
+        // })
         setlist([...list, ob])
         
         setname("")
@@ -28,7 +28,7 @@ export default function File(){
 }
 function Stats(i){
     const newlist = [...list];
-    list[i].status=!list[i].status;
+    newlist[i].status=!newlist[i].status;
     setlist(newlist)
 }
     useEffect(()=>{
