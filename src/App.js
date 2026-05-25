@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/File' element={<File/>}/>
+          <Route path='/' element={<File/>}/>
           {/* <Route path='/File2' element={<File2/>}/> */}
         </Routes>
       </BrowserRouter>
